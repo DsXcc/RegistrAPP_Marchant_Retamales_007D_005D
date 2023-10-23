@@ -21,12 +21,7 @@ export class AppComponent {
       icon: 'home-outline'
     },
     {
-      name: 'Login',
-      redirecTo: '/login',
-      icon: 'id-card-outline'
-    },
-    {
-      name: 'Registrar',
+      name: 'Registro',
       redirecTo: '/registro',
       icon: 'person-add-outline'
     },
@@ -34,6 +29,11 @@ export class AppComponent {
       name: 'Informacion',
       redirecTo: '/informacion',
       icon: 'alert-circle-outline'
+    },
+    {
+      name: 'Anime',
+      redirecTo: '/anime',
+      icon: 'paw-outline'
     },
 
   ]

@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { User } from '../interfaces/interfaces';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/servicios/api.service';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-registro',
@@ -8,18 +13,40 @@ import { AlertController } from '@ionic/angular';
 })
 export class RegistroPage implements OnInit {
 
-  user={
-    correo:'',
-    nombre:'',
-    apellido:'',
+  registroForm: FormGroup;
+
+    newUser: User={
+    username:'',
     password:'',
-    jornada:''
+    role: 'usuario',
+    nombre_asignatura:'',
+    ano_asignatura:'',
+    semestre_asignatura:'',
+    horas_asignatura:'',
+    isactive: true
+
+
+
   }
 
 
-  constructor(private alertController: AlertController) { }
+  constructor(private alertController: AlertController,
+              private ApiCrud: ApiService,
+              private router: Router,
+              private formBuilder: FormBuilder) {
+                this.registroForm = this.formBuilder.group({
+                  'username' : new FormControl("", [Validators.required, Validators.minLength(4)]),
+                  'password' : new FormControl("", [Validators.required, Validators.minLength(4)])
+
+                })
+               }
 
   ngOnInit() {
+  }
+
+  crearUsuario(){
+    this.ApiCrud.CrearUsuario(this.newUser).subscribe();
+    this.router.navigateByUrl("/login")
   }
 
   async Mensaje(){
@@ -30,16 +57,5 @@ export class RegistroPage implements OnInit {
     });
     await alert.present();
   }
-
-  enviar(){
-    this.Mensaje();
-    this.user.correo='';
-    this.user.nombre='';
-    this.user.apellido='';
-    this.user.password='';
-    this.user.jornada='';
-  }
-
-
-
+  
 }

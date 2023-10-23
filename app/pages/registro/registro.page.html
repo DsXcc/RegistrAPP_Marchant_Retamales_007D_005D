@@ -1,57 +1,70 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    <ion-title>registro</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title size="large">registro</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/" 
+              text="back"
+              color="primary"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Registro</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-card style="background-color: darkblue;">
-    <ion-card-header>
-      <ion-card-title>Registrate</ion-card-title>
-    </ion-card-header>
-    <ion-card-content style="background-color: darkcyan;">
-      <form>
-        <ion-list>
-          <ion-item>
-            <ion-label position="floating">Correo: </ion-label>
-            <ion-input type="email" placeholder="Ingrese Correo..."
-                      name="email" [(ngModel)]="user.correo"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Nombre: </ion-label>
-            <ion-input type="text" placeholder="Ingrese Nombre..."
-                      name="nombre" [(ngModel)]="user.nombre"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Apellido: </ion-label>
-            <ion-input type="text" placeholder="Ingrese Apellido..."
-                      name="apellido" [(ngModel)]="user.apellido"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Password: </ion-label>
-            <ion-input type="password" placeholder="Ingrese Contraseña..."
-                      name="password" [(ngModel)]="user.password"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Selecciona jornada: </ion-label>
-            <ion-select [(ngModel)]="user.jornada">
-              <ion-select-option value="Diurna">Diurna</ion-select-option>
-              <ion-select-option value="Vespertina">Vespertina</ion-select-option>
-            </ion-select>
-          </ion-item>
-        </ion-list>
-        <ion-button (click)="enviar()" routerLink="/login" expand="block" color="success" shape="round">
-          Ingresar
-        </ion-button>
-      </form>
-    </ion-card-content>
-  </ion-card>
-</ion-content>
+  
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">registro</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-card style="background-color: darkblue;">
+      <ion-card-header>
+        <ion-card-title>Registrate</ion-card-title>
+      </ion-card-header>
+      <ion-card-content style="background-color: darkcyan;">
+        <form>
+          <ion-list>
+            <ion-item>
+              <ion-label position="floating">Username: </ion-label>
+              <ion-input type="text" name="text" 
+                          [(ngModel)]="newUser.username"
+                          placeholder="Ingrese Correo..." required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Password: </ion-label>
+              <ion-input type="password" name="password" 
+                          [(ngModel)]="newUser.password"
+                          placeholder="Ingrese Contraseña..." required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Nombre_asignatura: </ion-label>
+              <ion-input type="text" name="asignatura"
+                          [(ngModel)]="newUser.nombre_asignatura"
+                            placeholder="Ingrese Asignatura..." required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Ano_asignatura: </ion-label>
+              <ion-input type="number" name="ano_asignatura"
+                          [(ngModel)]="newUser.ano_asignatura"
+                            placeholder="Ingrese Año de Asignatura..." required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Semestre_asignatura: </ion-label>
+              <ion-input type="number" name="semestre_asignatura"
+                          [(ngModel)]="newUser.semestre_asignatura"
+                            placeholder="Ingrese Semestre de la Asignatura..." required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Horas_asignatura: </ion-label>
+              <ion-input type="number" name="horas_asignatura"
+                          [(ngModel)]="newUser.horas_asignatura"
+                            placeholder="Ingrese Horas de la Asignatura..." required></ion-input>
+            </ion-item>
+          </ion-list>
+          <ion-button (click)="crearUsuario()" routerLink="/login" expand="block" color="success" shape="round">
+            Ingresar
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>

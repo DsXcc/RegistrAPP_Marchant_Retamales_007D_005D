@@ -1,0 +1,77 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "username": "cachupin",
+      "password": "duoc",
+      "role": "usuario",
+      "isactive": true
+    },
+    {
+      "id": 2,
+      "username": "cachupina",
+      "password": "maipu",
+      "role": "usuario",
+      "isactive": true
+    },
+    {
+      "username": "dayson",
+      "password": "dayson",
+      "role": "usuario",
+      "nombre_asignatura": "historia",
+      "ano_asignatura": 2,
+      "semestre_asignatura": 4,
+      "horas_asignatura": 3,
+      "isactive": true,
+      "id": 3
+    },
+    {
+      "username": "matias",
+      "password": "matias",
+      "role": "usuario",
+      "nombre_asignatura": "lenguaje",
+      "ano_asignatura": 4,
+      "semestre_asignatura": 8,
+      "horas_asignatura": 7,
+      "isactive": true,
+      "id": 4
+    }
+  ],
+
+  
+  "anime": [
+    {
+      "nombre": "Shingeki no Kyojin",
+      "temporada": "primavera",
+      "fecha": 4.10
+    },
+    {
+      "nombre": "Solo Leveling",
+      "temporada": "Verano",
+      "fecha": "Enero"
+    },
+    {
+      "nombre": "Kimetsu no Yaiba",
+      "temporada": "otoño",
+      "fecha": 2024
+    },
+    {
+      "nombre": "Haikyu!!",
+      "temporada": "Verano",
+      "fecha": 16.2
+    },
+    {
+      "nombre": "Bleach",
+      "temporada": "Sin confirmar",
+      "fecha": 2024
+    },
+    {
+      "nombre": "Konosuba",
+      "temporada": "Sin confirmar",
+      "fecha": 2024
+    }
+ 
+  ]
+
+
+}
